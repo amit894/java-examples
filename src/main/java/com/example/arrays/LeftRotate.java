@@ -27,3 +27,7 @@ public class LeftRotate {
 
     }
 }
+
+//Time Complexity : O(d*n)
+//Auxililary Space Complexity: O(1)
+
