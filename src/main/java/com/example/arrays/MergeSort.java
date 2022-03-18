@@ -5,40 +5,44 @@ public class MergeSort {
 
     private static void merge_sort(int [] A){
         if (A.length>1){
-            int mid = A.length/2;
-            int [] left = Arrays.copyOfRange(A, 0, mid);
-            int [] right = Arrays.copyOfRange(A,mid,A.length);
-            merge_sort(left);
-            merge_sort(right);
+            int mid=A.length/2;
+            int [] L = Arrays.copyOfRange(A,0,mid);
+            int [] R = Arrays.copyOfRange(A,mid,A.length);
+
+            merge_sort(L);
+            merge_sort(R);
+
             int i=0;
             int j=0;
             int k=0;
-            while (i<left.length && j<right.length && k<A.length){
-                if (left[i]<=right[j]){
-                    A[k]=left[i];
-                    i+=1;
+
+            while (i<L.length && j<R.length && k<A.length){
+                if (L[i]<=R[j]){
+                    A[k]=L[i];
                     k+=1;
+                    i+=1;
                 }
                 else {
-                    A[k]=right[j];
-                    j+=1;
+                    A[k]=R[j];
                     k+=1;
+                    j+=1;
+
                 }
-
             }
 
-            while (i<left.length){
-                A[k]=left[i];
+            while (i<L.length){
+                A[k]=L[i];
+                k+=1;
                 i+=1;
-                k+=1;
+
             }
 
-            while (j<right.length){
-                A[k]=right[j];
+            while (j<R.length){
+                A[k]=R[j];
+                k+=1;
                 j+=1;
-                k+=1;
-            }
 
+            }
         }
     }
 
