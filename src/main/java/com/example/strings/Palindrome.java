@@ -3,12 +3,12 @@ package com.example.strings;
 public class Palindrome {
 
     private static boolean isPalindrome ( String s){
-        int i =0;
         boolean flag=true;
+        int i=0;
         int j=s.length()-1;
         while (i<=j){
             if (s.charAt(i)!=s.charAt(j)){
-                flag = false;
+                flag=false;
                 break;
             }
             i+=1;
@@ -18,7 +18,7 @@ public class Palindrome {
 
     }
     public static void main (String [] args){
-        String s1="abba";
+        String s1="abcbba";
         System.out.println(isPalindrome(s1));
     }
 }
