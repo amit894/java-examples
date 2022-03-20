@@ -6,29 +6,27 @@ public class anagram {
 
     private static char [] convert_sort(String s){
         char [] char_array= new char[s.length()];
-        int i=0;
-        while (i<s.length()){
+
+        for ( int i=0;i<s.length(); i++){
             char_array[i]=s.charAt(i);
-            i+=1;
         }
+
         Arrays.sort(char_array);
         return char_array;
-
     }
 
-    private static boolean compare(char []s1, char [] s2){
-        if (s1.length!=s2.length){
+    private static boolean  compare (char [] char_array_1, char [] char_array_2){
+        if (char_array_1.length != char_array_2.length){
             return false;
         }
-        else {
-            for (int i=0;i<s1.length;i++){
-                if(s1[i]!=s2[i]){
-                    return  false;
-                }
+
+        for ( int i=0; i<char_array_1.length;i++){
+            if (char_array_1[i] != char_array_2[i]){
+                return false;
             }
-            return true;
         }
 
+        return true;
     }
 
     public static void main(String [] args){

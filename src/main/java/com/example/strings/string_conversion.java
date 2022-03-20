@@ -1,24 +1,23 @@
 package com.example.strings;
 
 
+import java.util.Arrays;
+
 public class string_conversion {
 
     private static char [] convert(String s){
-        char [] char_array= new char[s.length()];
-        int i=0;
-        while (i<s.length()){
-            char_array[i]=s.charAt(i);
-            i+=1;
+        char [] char_arr= new char [s.length()];
+        for (int i=0; i<s.length();i++){
+            char_arr[i]=s.charAt(i);
         }
-        return char_array;
 
+        return char_arr;
     }
 
     public static void main(String [] args){
         String s="hello";
-        System.out.println(convert(s));
-
-
+        System.out.println(s);
+        System.out.println(Arrays.toString(convert(s)));
 
     }
 }
