@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class MergeSort {
 
-    private static void merge_sort(int [] A){
+    private static void merge_sort(int [] A) {
         if (A.length>1){
             int mid=A.length/2;
             int [] L = Arrays.copyOfRange(A,0,mid);
@@ -17,7 +17,7 @@ public class MergeSort {
             int k=0;
 
             while (i<L.length && j<R.length && k<A.length){
-                if (L[i]<=R[j]){
+                if(L[i]<R[j]){
                     A[k]=L[i];
                     k+=1;
                     i+=1;
@@ -30,20 +30,20 @@ public class MergeSort {
                 }
             }
 
-            while (i<L.length){
+            while (i<L.length ){
                 A[k]=L[i];
                 k+=1;
                 i+=1;
-
             }
 
-            while (j<R.length){
+            while (j<R.length ){
                 A[k]=R[j];
                 k+=1;
                 j+=1;
 
             }
         }
+
     }
 
     public static void main (String [] args){
