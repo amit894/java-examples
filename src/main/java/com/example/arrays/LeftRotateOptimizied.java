@@ -5,13 +5,15 @@ import java.util.Arrays;
 public class LeftRotateOptimizied {
 
     private static int gcd(int a, int b) {
-        if (a == 0) {
-            return b;
-        } else if (b == 0) {
-            return a;
-        } else {
-            return gcd(b, a % b);
-        }
+     if (a==0){
+         return b;
+     }
+     if (b==0){
+         return a;
+     }
+     else {
+         return gcd(b,a%b);
+     }
 
     }
 
@@ -19,11 +21,11 @@ public class LeftRotateOptimizied {
     private static void left_optimizied(int[] A, int d) {
         d=d%A.length;
         int g_c_d=gcd(d,A.length);
-        for ( int i =0; i<g_c_d;i++){
-            int j =i;
+        for ( int i=0; i<g_c_d;i++){
+            int j=i;
             int temp=A[i];
             while (true){
-                int k=d+j;
+                int k = d+j;
                 if (k>=A.length){
                     k=k-A.length;
                 }
@@ -35,7 +37,6 @@ public class LeftRotateOptimizied {
             }
             A[j]=temp;
         }
-
 
     }
 
