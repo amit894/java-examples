@@ -4,16 +4,15 @@ public class Palindrome {
 
     private static boolean isPalindrome ( String s){
     boolean flag=true;
-    int i=0;
-    int j=s.length()-1;
-
-    while (i<=j){
-        if (s.charAt(i)!=s.charAt(j)){
+    int left=0;
+    int right=s.length()-1;
+    while (left<=right){
+        if (s.charAt(left)!=s.charAt(right)){
             flag=false;
-            return flag;
+            break;
         }
-        i+=1;
-        j-=1;
+        left+=1;
+        right-=1;
     }
 
     return flag;
@@ -21,5 +20,7 @@ public class Palindrome {
     public static void main (String [] args){
         String s1="abbba";
         System.out.println(isPalindrome(s1));
+        String s2="amit";
+        System.out.println(isPalindrome(s2));
     }
 }

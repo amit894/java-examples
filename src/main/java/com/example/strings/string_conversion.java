@@ -6,12 +6,11 @@ import java.util.Arrays;
 public class string_conversion {
 
     private static char [] convert(String s){
-        char [] char_arr= new char [s.length()];
-        for (int i=0; i<s.length();i++){
-            char_arr[i]=s.charAt(i);
-        }
-
-        return char_arr;
+       char [] s1 = new char[s.length()];
+       for (int i=0; i<s.length();i++){
+           s1[i]=s.charAt(i);
+       }
+       return (s1);
     }
 
     public static void main(String [] args){
