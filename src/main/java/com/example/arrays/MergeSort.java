@@ -4,42 +4,44 @@ import java.util.Arrays;
 public class MergeSort {
 
     private static void merge_sort(int [] A) {
-    if (A.length>1){
-        int mid = A.length/2;
-        int [] L = Arrays.copyOfRange(A,0,mid);
-        int [] R = Arrays.copyOfRange(A, mid, A.length);
+        if (A.length>1){
+            int mid = A.length/2;
+            int [] L = Arrays.copyOfRange(A,0,mid);
+            int [] R = Arrays.copyOfRange(A,mid,A.length);
 
-        merge_sort(L);
-        merge_sort(R);
+            merge_sort(L);
+            merge_sort(R);
 
-        int i,j,k;
-        i=j=k=0;
-        while (i<L.length && j<R.length && k<A.length){
-            if (L[i]<R[j]){
+            int i,j,k;
+            i=j=k=0;
+
+            while (i<L.length && j <R.length && k <A.length){
+                if (L[i]<R[j]){
+                    A[k]=L[i];
+                    k+=1;
+                    i+=1;
+                }
+
+                else {
+                    A[k]=R[j];
+                    k+=1;
+                    j+=1;
+                }
+            }
+
+            while (i<L.length){
                 A[k]=L[i];
                 k+=1;
                 i+=1;
             }
 
-           else {
+            while (j<R.length){
                 A[k]=R[j];
                 k+=1;
                 j+=1;
             }
-        }
 
-        while (i<L.length){
-            A[k]=L[i];
-            k+=1;
-            i+=1;
-        }
-
-        while (j<R.length){
-            A[k]=R[j];
-            k+=1;
-            j+=1;
-        }
-    }
+            }
 
     }
 
