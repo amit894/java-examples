@@ -15,6 +15,7 @@ public class Palindrome {
         right-=1;
     }
 
+
     return flag;
     }
     public static void main (String [] args){
