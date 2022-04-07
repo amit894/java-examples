@@ -9,11 +9,12 @@ public class Palindrome {
     while (left<=right){
         if (s.charAt(left)!=s.charAt(right)){
             flag=false;
-            break;
+            return flag;
         }
         left+=1;
         right-=1;
     }
+
 
 
     return flag;

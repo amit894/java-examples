@@ -7,7 +7,7 @@ public class MergeSort {
       if (A.length>1){
           int mid = A.length/2;
           int [] L = Arrays.copyOfRange(A,0,mid);
-          int [] R = Arrays.copyOfRange(A,mid,A.length);
+          int [] R= Arrays.copyOfRange(A,mid,A.length);
 
           merge_sort(L);
           merge_sort(R);
@@ -20,15 +20,15 @@ public class MergeSort {
                   A[k]=L[i];
                   i+=1;
                   k+=1;
-          }
+              }
               else {
                   A[k]=R[j];
                   j+=1;
                   k+=1;
+
               }
-                  
           }
-          
+
           while (i<L.length){
               A[k]=L[i];
               i+=1;
