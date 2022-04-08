@@ -3,19 +3,17 @@ package com.example.strings;
 public class Palindrome {
 
     private static boolean isPalindrome ( String s){
-    boolean flag=true;
-    int left=0;
-    int right=s.length()-1;
-    while (left<=right){
-        if (s.charAt(left)!=s.charAt(right)){
-            flag=false;
-            return flag;
+        boolean flag=true;
+        int left=0;
+        int right=s.length()-1;
+        while (left<right){
+            if (s.charAt(left)!=s.charAt(right)){
+                flag=false;
+                break;
+            }
+            left+=1;
+            right-=1;
         }
-        left+=1;
-        right-=1;
-    }
-
-
 
     return flag;
     }
