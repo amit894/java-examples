@@ -15,15 +15,15 @@ public class BinarySearch {
             }
             else {
                 return search(low,mid-1,A,item);
-
             }
+
         }
-       return -1;
+        return -1;
 
     }
     public static void main (String args []){
         int [] A={1,2,3,4,5};
-        int index= search(0,A.length-1,A,15);
+        int index= search(0,A.length-1,A,5);
         System.out.println(index);
     }
 }

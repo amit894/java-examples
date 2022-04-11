@@ -22,16 +22,15 @@ public class QuickSort {
     }
 
     private static int [] quick_sort(int low, int high, int [] A){
-      if (A.length==1){
-          return A;
-      }
-      else if (low<=high){
-          int pi=pivot(low,high,A);
-          quick_sort(low,pi-1,A);
-          quick_sort(pi+1,high,A);
-
-      }
-      return A;
+        if (A.length==1){
+            return A;
+        }
+        else if (low <=high){
+            int pi=pivot(low,high,A);
+            quick_sort(low,pi-1,A);
+            quick_sort(pi+1,high,A);
+        }
+        return A;
     }
 
     public static void main (String args[]){
