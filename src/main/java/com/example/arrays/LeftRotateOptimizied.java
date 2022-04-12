@@ -12,15 +12,15 @@ public class LeftRotateOptimizied {
             return a;
         }
         else {
-            return gcd(b,a%b);
+            return gcd(b, a%b);
         }
     }
 
 
     private static void left_optimizied(int[] A, int d) {
-        d=d%A.length;
-        int g_c_d=gcd(d,A.length);
-        for (int i=0; i<g_c_d;i++){
+        d = d%A.length;
+        int g_c_d=gcd(A.length,d);
+        for ( int i =0; i<g_c_d;i++){
             int j=i;
             int temp=A[i];
             while (true){
@@ -36,7 +36,6 @@ public class LeftRotateOptimizied {
             }
             A[j]=temp;
         }
-
     }
 
     public static void main(String args[]) {

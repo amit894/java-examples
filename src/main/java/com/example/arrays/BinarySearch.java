@@ -6,15 +6,15 @@ public class BinarySearch {
 
     private static int search (int low, int high, int [] A, int item){
         if (low<=high){
-            int mid= (int) (Math.floor(low+high)/2);
+            int mid= (int) (Math.floor(high+low)/2);
             if (A[mid]==item){
-                return mid;
+                return item;
             }
             else if (A[mid]<item){
-                return search(mid+1,high,A,item);
+                return search (mid+1,high,A,item);
             }
             else {
-                return search(low,mid-1,A,item);
+                return search (low,mid-1,A,item);
             }
 
         }

@@ -8,19 +8,20 @@ public class MaxContinousSum {
         for (int i=0; i<k;i++){
             maxSum+=A[i];
         }
-        int window_sum=maxSum;
+        int sum=maxSum;
 
         for (int i=k;i<A.length;i++){
-            window_sum=window_sum+A[i]-A[i-k];
-            maxSum=Math.max(window_sum,maxSum);
+            sum+=A[i]-A[i-k];
+            maxSum=Math.max(sum,maxSum);
         }
-
         return maxSum;
+
+
     }
 
     public static void main (String args []){
         int [] A = {-2,3,4,-8,1,-5,6,12};
-        System.out.println(maxContinousSum(A,4));
+        System.out.println(maxContinousSum(A,2));
 
     }
 }

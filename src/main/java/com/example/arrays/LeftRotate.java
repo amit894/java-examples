@@ -18,7 +18,6 @@ public class LeftRotate {
        }
        A[A.length-1]=temp;
 
-
    }
 
 
