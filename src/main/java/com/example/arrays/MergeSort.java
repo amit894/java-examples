@@ -18,28 +18,30 @@ public class MergeSort {
          while (i<L.length && j<R.length && k<A.length){
              if (L[i]<R[j]){
                  A[k]=L[i];
-                 k+=1;
                  i+=1;
+                 k+=1;
              }
              else {
                  A[k]=R[j];
-                 k+=1;
                  j+=1;
+                 k+=1;
              }
          }
 
          while (i<L.length){
              A[k]=L[i];
-             k+=1;
              i+=1;
+             k+=1;
          }
 
          while (j<R.length){
              A[k]=R[j];
-             k+=1;
              j+=1;
+             k+=1;
          }
-     }
+
+
+        }
 
     }
 

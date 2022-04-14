@@ -6,9 +6,9 @@ import java.util.Arrays;
 public class LeftRotate {
 
    private static void left_rotate(int [] A, int d){
-       for (int i=0;i<d;i++){
-           left_rotate_by_one(A);
-       }
+     for (int i=0; i<d;i++){
+         left_rotate_by_one(A);
+     }
    }
 
    private static void left_rotate_by_one(int [] A) {
@@ -17,7 +17,6 @@ public class LeftRotate {
            A[i]=A[i+1];
        }
        A[A.length-1]=temp;
-
    }
 
 

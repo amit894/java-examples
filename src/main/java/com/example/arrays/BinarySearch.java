@@ -5,20 +5,20 @@ import java.util.Arrays;
 public class BinarySearch {
 
     private static int search (int low, int high, int [] A, int item){
-        if (low<=high){
-            int mid= (int) (Math.floor(high+low)/2);
-            if (A[mid]==item){
-                return item;
-            }
-            else if (A[mid]<item){
-                return search (mid+1,high,A,item);
-            }
-            else {
-                return search (low,mid-1,A,item);
-            }
+     if (low<=high){
+         int mid = (int) Math.floor(high+low)/2;
+         if (A[mid]==item){
+             return mid;
+         }
+         else if (A[mid]>item){
+            return search(low,mid-1,A,item);
+         }
+         else {
+             return search(mid+1,high,A,item);
+         }
 
-        }
-        return -1;
+     }
+     return -1;
 
     }
     public static void main (String args []){
