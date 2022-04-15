@@ -3,18 +3,20 @@ package com.example.arrays;
 public class MaxContinousSum {
 
     private static int maxContinousSum( int [] A, int k){
-     int maxSum=0;
-     for (int i=0;i<k;i++){
-         maxSum+=A[i];
-     }
-     int window_sum=maxSum;
+        int maxSum=0;
 
-     for (int i=k;i<A.length;i++){
-         window_sum=window_sum+A[i]-A[i-k];
-         maxSum=Math.max(window_sum,maxSum);
-     }
+        for (int i=0; i<k;i++){
+            maxSum+=A[i];
+        }
 
-     return maxSum;
+        int windowSum=maxSum;
+
+        for (int i=k;i<A.length;i++){
+            windowSum=windowSum+A[i]-A[i-k];
+            maxSum=Math.max(windowSum,maxSum);
+        }
+
+        return maxSum;
     }
 
     public static void main (String args []){
