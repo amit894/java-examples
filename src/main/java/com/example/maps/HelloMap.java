@@ -4,40 +4,40 @@ import java.util.*;
 public class HelloMap {
 
     private static void string_string_map(){
+        HashMap<String, String> s1 = new HashMap<>();
+        s1.put("Amit","Tennis");
+        s1.put("Gaurav","Football");
+        s1.put("Ayush", "Tennis");
 
-        Map <String, String> s1 = new HashMap<>();
-        s1.put("Amit","Devops");
-        s1.put ("Gaurav", "Dev");
-        s1.put ("Vinod", "QA");
-
-        for (Map.Entry<String, String> entry : s1.entrySet()) {
-            System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
+        for ( Map.Entry<String,String> entry: s1.entrySet()){
+            System.out.println("Key="+ entry.getKey()+" Value="+entry.getValue());
         }
+
 
 
     }
 
     private static void integer_integer_map(){
         HashMap <Integer, Integer> s1 = new HashMap<>();
-        s1.put(1,1);
-        s1.put(2,2);
-        s1.put(3,3);
+        s1.put(1,1000);
+        s1.put(2,2000);
+        s1.put(3,3000);
 
-        for ( Map.Entry<Integer, Integer> entry: s1.entrySet()){
-            System.out.println("Key ="+ entry.getKey()+ "Value ="+ entry.getValue());
+        for (Map.Entry<Integer, Integer> entry: s1.entrySet()){
+            System.out.println("Key="+ entry.getKey()+ " Value="+ entry.getValue());
         }
 
     }
 
     private static void string_integer_map(){
-        HashMap<String, Integer> s1= new HashMap<>();
-        s1.put("Amit",1);
-        s1.put("Neha", 2);
-        s1.put("Govinda",3);
+      HashMap<String, Integer> s1=new HashMap<>();
+      s1.put("Amit", 100);
+      s1.put("Neha",200);
+      s1.put("Kansishka",100);
 
-        for (Map.Entry<String, Integer> entry:s1.entrySet()){
-            System.out.println("Key ="+ entry.getKey()+"Value="+entry.getValue());
-        }
+      for ( Map.Entry<String, Integer> entry: s1.entrySet()){
+          System.out.println("Key="+entry.getKey()+" Value="+ entry.getValue());
+      }
 
     }
 
@@ -48,7 +48,7 @@ public class HelloMap {
         s1.put(3,"Mohan");
 
         for (Map.Entry<Integer, String> entry:s1.entrySet()){
-            System.out.println("Key ="+entry.getKey()+"Value="+entry.getValue());
+            System.out.println("Key="+entry.getKey()+" Value="+entry.getValue());
         }
 
     }
