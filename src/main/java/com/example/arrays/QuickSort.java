@@ -10,31 +10,29 @@ public class QuickSort {
         for (int j=low;j<high;j++){
             if (A[j]<=key){
                 i+=1;
-                int temp=A[j];
-                A[j]=A[i];
-                A[i]=temp;
+                int temp=A[i];
+                A[i]=A[j];
+                A[j]=temp;
             }
         }
-        int temp=A[high];
-        A[high]=A[i+1];
-        A[i+1]=temp;
+        int temp=A[i+1];
+        A[i+1]=A[high];
+        A[high]=temp;
 
         return (i+1);
 
     }
 
     private static int [] quick_sort(int low, int high, int [] A){
-        if (A.length==1){
+        if (A.length==0){
             return A;
         }
-        else if (low <=high){
+        else if (low<=high){
             int pi=pivot(low,high,A);
-            quick_sort(low,pi-1,A);
-            quick_sort(pi+1,high,A);
+             quick_sort(low,pi-1,A);
+             quick_sort(pi+1,high,A);
         }
-
         return A;
-
     }
 
     public static void main (String args[]){

@@ -9,7 +9,7 @@ public class LeftRotateOptimizied {
             return b;
         }
         else if (b==0){
-            return a;
+            return  a;
         }
         else {
             return gcd(b,a%b);
@@ -20,7 +20,7 @@ public class LeftRotateOptimizied {
     private static void left_optimizied(int[] A, int d) {
         d=d%A.length;
         int g_c_d=gcd(d,A.length);
-        for ( int i=0; i<g_c_d;i++){
+        for (int i=0; i<g_c_d;i++){
             int j=i;
             int temp=A[i];
             while (true){
@@ -40,7 +40,7 @@ public class LeftRotateOptimizied {
 
     public static void main(String args[]) {
         int[] A = {1, 2, 3, 4, 5};
-        left_optimizied(A, 1);
+        left_optimizied(A, 3);
         System.out.println(Arrays.toString(A));
         System.out.println(gcd(21,105));
 
