@@ -12,12 +12,11 @@ public class RightRotate {
     }
 
     private static void right_rotate_by_one(int [] A) {
-
         int temp=A[A.length-1];
         for (int i=A.length-1;i>0;i--){
-           A[i]=A[i-1];
-       }
-       A[0]=temp;
+            A[i]=A[i-1];
+        }
+        A[0]=temp;
 
     }
     public static void main (String args[]){

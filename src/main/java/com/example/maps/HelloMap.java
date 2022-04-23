@@ -5,32 +5,24 @@ import java.util.*;
 public class HelloMap {
 
     private static void string_string_map(){
-        HashMap <String,String> s1 = new HashMap<>();
-        s1.put("amit","key");
-        s1.put("dad","lock");
-
-        System.out.println(s1);
-
+        HashMap <String, String> s1 = new HashMap<>();
+        s1.put("amit","boy");
+        s1.put("neha","girl");
 
         for (Map.Entry<String,String> entry: s1.entrySet()){
-            System.out.println(entry.getKey()+" "+entry.getValue());
+            System.out.println(entry.getKey()+":"+entry.getValue());
         }
-
 
     }
 
     private static void integer_integer_map(){
-        HashMap<Integer,Integer> s1 = new HashMap<>();
-        s1.put(1,1);
-        s1.put(2,2);
-
-        System.out.println(s1);
-
+        HashMap <Integer, Integer> s1 = new HashMap<>();
+        s1.put(1,3);
+        s1.put(4,5);
 
         for (Map.Entry<Integer,Integer> entry: s1.entrySet()){
-            System.out.println(entry.getKey()+" "+entry.getValue());
+            System.out.println(entry.getKey()+":"+entry.getValue());
         }
-
 
     }
 
