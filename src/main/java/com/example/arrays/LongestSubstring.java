@@ -18,8 +18,22 @@ public class LongestSubstring {
 
     }
 
+    private static int LengthofLongestSubstring2( String s){
+        int maxLength=-1;
+        String subs = "";
+        for (int i=0;i<s.length();i++){
+            if (subs.contains(String.valueOf(s.charAt(i)))){
+                subs=subs.substring(subs.indexOf(s.charAt(i))+1,subs.length());
+            }
+            subs+=String.valueOf(s.charAt(i));
+            maxLength=Math.max(maxLength,subs.length());
+        }
+        return maxLength;
+    }
+
     public static void main (String [] args){
         System.out.println(lengthOfLongestSubstring("pwwkew"));
+        System.out.println(LengthofLongestSubstring2("pwwkew"));
 
     }
 }
