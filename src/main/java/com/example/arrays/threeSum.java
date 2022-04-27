@@ -3,14 +3,18 @@ package com.example.arrays;
 import java.util.*;
 
 public class threeSum {
-    private static void twoSum (int i, List<List<Integer>> res,int[] nums){
-        HashMap<Integer,Integer> map = new HashMap <>();
+    private static void twoSum (int i, int[] nums,List<List<Integer>> res){
+        Map <Integer, Integer> map = new HashMap<>();
         for (int j=i+1;j<nums.length;j++){
-            int diff = (nums[i]*-1)-nums[j];
+            int diff = nums[i]*-1 - nums[j];
             if (map.containsKey(diff)){
-                if (i!=j && j!=map.get(diff) && i!=map.get(diff)){
-                    int [] k= new int[] {nums[i],diff,nums[j]};
-                    res.add(Arrays.asList(k[0],k[1],k[2]));
+                List <Integer> temp_list = new ArrayList<>();
+                temp_list.add(nums[i]);
+                temp_list.add(nums[j]);
+                temp_list.add(diff);
+                Collections.sort(temp_list);
+                if (!res.contains(temp_list)){
+                    res.add(temp_list);
                 }
             }
             map.put(nums[j],j);
@@ -18,12 +22,12 @@ public class threeSum {
     }
 
     private static List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> res = new ArrayList<>();
-        for (int i=0; i<nums.length; i++){
-            twoSum(i,res,nums);
+        List <List <Integer>> res = new ArrayList<>();
+        for (int i=0; i<nums.length;i++){
+            twoSum(i,nums,res);
         }
-        return res;
 
+        return res;
     }
 
     public static void main (String args[]){
