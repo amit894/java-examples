@@ -2,19 +2,30 @@ package com.example.arrays;
 
 public class ReverseInteger {
 
-    private static int reverse_int(int num){
-       String st= String.valueOf(Math.abs(num));
-       String reverse_string = "";
-       for ( int i=st.length()-1;i>=0;i--){
-           reverse_string+=String.valueOf(st.charAt(i));
-       }
+    private static int reverse_int(int x){
+        int sign =0;
+        int result=0;
+        if (x>0){
+            sign=1;
+        }
+        else {
+            sign=-1;
+        }
 
+        while (x!=0){
+            if (sign*result<Integer.MIN_VALUE/10){
+                return 0;
 
-       if (num<0){
-           return Integer.valueOf(reverse_string)*-1;
-       }
+            }
+            else if (sign*result>Integer.MAX_VALUE/10){
+                return 0;
+            }
+            int digit=x%10;
+            result=result*10+digit;
+            x=x/10;
+        }
 
-       return Integer.valueOf(reverse_string);
+        return result;
 
     }
 
