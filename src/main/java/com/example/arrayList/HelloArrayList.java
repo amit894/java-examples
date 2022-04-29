@@ -4,11 +4,20 @@ import java.util.*;
 
 public class HelloArrayList {
 
-    private static void list_initalize(){
+    private static void integer_list_initalize(){
         List <Integer> list = new ArrayList<>();
-        for (int i=0; i<5;i++){
+        for (int i=0;i<5;i++){
             list.add(i);
         }
+        System.out.println(list);
+    }
+
+    private static void string_list_initalize(){
+        List <String> list = new ArrayList<>();
+        for (int i=0;i<5;i++){
+            list.add(String.valueOf(i));
+        }
+        System.out.println(list);
     }
 
     private static void nested_list_initalize(){
@@ -26,7 +35,8 @@ public class HelloArrayList {
     }
 
     public static void main (String [] args){
-        list_initalize();
+        integer_list_initalize();
+        string_list_initalize();
         nested_list_initalize();
     }
 }

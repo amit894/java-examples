@@ -4,13 +4,14 @@ import java.util.*;
 public class HelloMap {
 
     private static void string_string_map(){
-        HashMap <String, String> s1 = new HashMap<>();
-        s1.put("amit", "dumb");
-        s1.put("neha", "smart");
+        HashMap<String,String> list = new HashMap<>();
+        list.put("Amit", "Football");
+        list.put("Sumit", "Basketball");
 
-        for (Map.Entry <String, String> entry: s1.entrySet()){
+        for (Map.Entry<String,String> entry: list.entrySet()){
             System.out.println(entry.getKey()+" "+entry.getValue());
         }
+
 
     }
 
