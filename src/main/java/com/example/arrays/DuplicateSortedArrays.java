@@ -1,5 +1,7 @@
 package com.example.arrays;
 
+import java.util.Arrays;
+
 public class DuplicateSortedArrays {
 
     private static int removeDuplicates(int [] nums){
@@ -16,10 +18,11 @@ public class DuplicateSortedArrays {
                 nums[duplicate_index]=temp;
                 duplicate_index+=1;
             }
-
         }
 
-        return unique_index+1;
+        System.out.println(Arrays.toString(nums));
+
+        return (unique_index+1);
     }
 
     public static void main (String args[]){
