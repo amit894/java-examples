@@ -5,28 +5,26 @@ import java.util.Arrays;
 public class anagram {
 
     private static char [] convert_sort(String s){
-        char [] char_array= new char [s.length()];
-        for (int i=0; i<s.length();i++){
-            char_array[i]=s.charAt(i);
+        char [] ch_array = new char[s.length()];
+        for ( int i=0; i<s.length();i++){
+            ch_array[i]=s.charAt(i);
         }
-        Arrays.sort(char_array);
-        return char_array;
-
+        Arrays.sort(ch_array);
+        return ch_array;
     }
 
     private static boolean  compare (char [] char_array_1, char [] char_array_2){
-        if (char_array_1.length !=char_array_2.length){
+        if (char_array_1.length != char_array_2.length){
             return false;
         }
         else {
-            for (int i=0;i<char_array_1.length;i++){
-                if (char_array_1[i]!=char_array_2[i]){
+            for (int i=0; i<char_array_2.length; i++){
+                if (char_array_1[i] != char_array_2[i]){
                     return false;
                 }
             }
         }
         return true;
-
     }
 
     public static void main(String [] args){
