@@ -4,17 +4,17 @@ import java.util.*;
 
 public class threeSum {
     private static void twoSum (int i, int[] nums,List<List<Integer>> res){
-        Map <Integer, Integer> map = new HashMap<>();
-        for (int j=i+1;j<nums.length;j++){
-            int diff = nums[i]*-1 - nums[j];
+        HashMap <Integer, Integer> map = new HashMap<>();
+        for (int j=i+1; j<nums.length;j++){
+            int diff=(nums[i]+nums[j])*-1;
             if (map.containsKey(diff)){
-                List <Integer> temp_list = new ArrayList<>();
-                temp_list.add(nums[i]);
-                temp_list.add(nums[j]);
-                temp_list.add(diff);
-                Collections.sort(temp_list);
-                if (!res.contains(temp_list)){
-                    res.add(temp_list);
+                List <Integer> l1 = new ArrayList<>();
+                l1.add(nums[i]);
+                l1.add(nums[j]);
+                l1.add(diff);
+                Collections.sort(l1);
+                if (!res.contains(l1)){
+                    res.add(l1);
                 }
             }
             map.put(nums[j],j);
@@ -22,8 +22,8 @@ public class threeSum {
     }
 
     private static List<List<Integer>> threeSum(int[] nums) {
-        List <List <Integer>> res = new ArrayList<>();
-        for (int i=0; i<nums.length;i++){
+        List<List <Integer>> res= new ArrayList<>();
+        for (int i=0; i< nums.length; i++){
             twoSum(i,nums,res);
         }
 
