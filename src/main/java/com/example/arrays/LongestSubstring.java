@@ -5,17 +5,17 @@ public class LongestSubstring {
 
 
     private static int LengthofLongestSubstring( String s){
-       String subs = " ";
-       int maxlen =0;
-       for (int i=0; i<s.length();i++){
-           if (subs.contains(String.valueOf(s.charAt(i)))){
-               subs = subs.substring(subs.indexOf(s.charAt(i))+1,subs.length());
-           }
-           subs+=String.valueOf(s.charAt(i));
-           maxlen = Math.max(maxlen,subs.length());
-       }
+      String subs ="";
+      int maxLength=0;
+      for (int i=0; i<s.length();i++){
+          if (subs.contains(String.valueOf(s.charAt(i)))){
+              subs=subs.substring(subs.indexOf(s.charAt(i))+1,subs.length());
+          }
+          subs+=String.valueOf(s.charAt(i));
+          maxLength=Math.max(maxLength,subs.length());
+      }
 
-       return maxlen;
+      return maxLength;
     }
 
     public static void main (String [] args){
