@@ -5,28 +5,26 @@ import java.util.Arrays;
 public class QuickSort {
 
     private static int pivot(int low, int high, int [] A){
-       int i=low-1;
-       int pivot=A[high];
-       for (int j=low;j<high;j++){
-           if (A[j]<pivot){
-               i+=1;
-               int temp=A[j];
-               A[j]=A[i];
-               A[i]=temp;
-           }
-       }
+        int i=low-1;
+        int pivot=A[high];
+        for (int j=low;j<high;j++){
+            if (A[j]<=pivot){
+                i+=1;
+                int temp=A[i];
+                A[i]=A[j];
+                A[j]=temp;
+            }
+        }
         int temp=A[high];
         A[high]=A[i+1];
         A[i+1]=temp;
 
         return (i+1);
-
     }
 
     private static int [] quick_sort(int low, int high, int [] A){
-        if (A.length==1){
+        if (A.length==1)
             return A;
-        }
         else if (low<=high){
             int pi=pivot(low,high,A);
             quick_sort(low,pi-1,A);
