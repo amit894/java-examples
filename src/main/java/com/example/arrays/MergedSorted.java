@@ -5,39 +5,39 @@ import java.util.Arrays;
 
 public class MergedSorted {
     private  static void  merge(int[] nums1, int m, int[] nums2, int n) {
-        int [] nums1Copy= new int[m];
-        for (int i=0;i<m;i++){
+        int [] nums1Copy = new int [m];
+        for ( int i=0; i<m;i++){
             nums1Copy[i]=nums1[i];
         }
-
         int i=0;
         int j=0;
         int k=0;
 
-        while(i<nums1Copy.length && j<nums2.length && k<nums1.length){
-            if (nums1Copy[i]<=nums2[j]){
+        while (i<nums1Copy.length && j <nums2.length && k<nums1.length){
+            if (nums1Copy[i]<nums2[j]){
                 nums1[k]=nums1Copy[i];
                 i+=1;
                 k+=1;
             }
-            else{
+            else {
                 nums1[k]=nums2[j];
                 j+=1;
                 k+=1;
+
             }
         }
 
-        while(i<nums1Copy.length){
+        while (i<nums1Copy.length){
             nums1[k]=nums1Copy[i];
             i+=1;
             k+=1;
         }
-
-        while(j<nums2.length){
+        while (j<nums2.length){
             nums1[k]=nums2[j];
             j+=1;
             k+=1;
         }
+
 
     }
 

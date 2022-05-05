@@ -5,32 +5,32 @@ import java.util.*;
 public class HelloArrayList {
 
     private static void integer_list_initalize(){
-        List <Integer> list = new ArrayList<>();
-        for (int i=0;i<5;i++){
-            list.add(i);
-        }
+        List <Integer> list =new ArrayList<>();
+        list.add(1);
+        list.add(2);
+
         System.out.println(list);
     }
 
     private static void string_list_initalize(){
-        List <String> list = new ArrayList<>();
-        for (int i=0;i<5;i++){
-            list.add(String.valueOf(i));
-        }
+        List <String> list= new ArrayList<>();
+        list.add(String.valueOf(1));
+        list.add(String.valueOf(2));
+        list.add(String.valueOf(3));
+
         System.out.println(list);
+
+
     }
 
     private static void nested_list_initalize(){
-        List<List <Integer>> l1 = new ArrayList<>(5);
-
+        List<List <String>> l1 = new ArrayList<>();
         for (int i=0; i<5;i++){
-            List<Integer> temp_array= new ArrayList<>();
-            temp_array.add(i);
-            temp_array.add(i);
-            ///l1.add(Arrays.asList(temp_array[0], temp_array[1]));
-            l1.add(temp_array);
+            List <String> s1 = new ArrayList<>();
+            s1.add("A");
+            s1.add("B");
+            l1.add(s1);
         }
-
         System.out.println(l1);
     }
 

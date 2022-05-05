@@ -8,20 +8,20 @@ public class DuplicateSortedArrays {
         int unique_index=0;
         int duplicate_index=1;
 
-        while ( unique_index<nums.length && duplicate_index<nums.length){
-            if (nums[unique_index]==nums[duplicate_index]){
+        while (unique_index<nums.length && duplicate_index<nums.length){
+            if (nums[unique_index]==nums[duplicate_index])
                 duplicate_index+=1;
-            }
-            else {
+            else{
                 unique_index+=1;
-                int temp = nums[unique_index];
+                int temp=nums[unique_index];
                 nums[unique_index]=nums[duplicate_index];
                 nums[duplicate_index]=temp;
                 duplicate_index+=1;
             }
+
         }
 
-        return  (unique_index+1);
+        return (unique_index+1);
     }
 
     public static void main (String args[]){
