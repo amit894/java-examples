@@ -3,17 +3,14 @@ package com.example.strings;
 public class validPalindrome {
 
     private static boolean isPalindrome(String s, int left,int right){
-        boolean flag = false;
+        boolean flag=false;
 
-        while (left<=right){
-            if (s.charAt(left)!=s.charAt(right))
+        while(left<=right){
+            if(s.charAt(left)!=s.charAt(right))
                 return false;
-            else {
-                flag = true;
-                left+=1;
-                right-=1;
-            }
-
+            left+=1;
+            right-=1;
+            flag=true;
         }
 
 
@@ -24,11 +21,11 @@ public class validPalindrome {
     public static boolean validPalindrome(String s) {
         int left=0;
         int right=s.length()-1;
-        boolean flag = false;
+        boolean flag=false;
 
         while (left<=right){
             if (s.charAt(left)!=s.charAt(right))
-                return (isPalindrome(s,left+1,right) || isPalindrome(s,left,right-1));
+                return isPalindrome(s,left+1,right) || isPalindrome(s,left,right-1);
             flag=true;
             left+=1;
             right-=1;

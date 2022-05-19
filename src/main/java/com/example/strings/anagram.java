@@ -4,34 +4,28 @@ import java.util.Arrays;
 
 public class anagram {
 
-    private static char [] convert_sort(String s){
-        char [] ch_arr= new char [s.length()];
-        ch_arr=s.toCharArray();
-        Arrays.sort(ch_arr);
-        return ch_arr;
+    private static String convert_sort(String s){
+        char [] char_array=new char[s.length()];
+        char_array=s.toCharArray();
+        Arrays.sort(char_array);
+        String sorted_string=new String(char_array);
+        return sorted_string;
     }
 
-    private static boolean  compare (char [] char_array_1, char [] char_array_2){
-        String s1= new String(char_array_1);
-        String s2 = new String(char_array_2);
-
-        if (s1.equals(s2)){
+    private static boolean  compare (String s1, String s2){
+        if (convert_sort(s1).equals(convert_sort(s2)))
             return true;
-        }
-
         return false;
+
     }
 
     public static void main(String [] args){
         String s1="bachelor";
-        String s2="bacehlor";
+        String s2="bacehlomr";
         String s3="backehlor";
 
-        char [] s1_array=convert_sort(s1);
-        char [] s2_array=convert_sort(s2);
-        char [] s3_array=convert_sort(s3);
-        System.out.println(compare(s1_array,s2_array));
-        System.out.println(compare(s1_array,s3_array));
+        System.out.println(compare(s1,s2));
+        System.out.println(compare(s2,s3));
 
     }
 }

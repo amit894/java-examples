@@ -4,54 +4,52 @@ import java.util.*;
 public class HelloMap {
 
     private static void string_string_map(){
-        HashMap<String,String> list = new HashMap<>();
-        list.put("Amit", "Football");
-        list.put("Sumit", "Basketball");
+        HashMap<String,String> map = new HashMap<>();
+        map.put("Amit","Basketball");
+        map.put("Neha","Tennis");
 
-        for (Map.Entry<String,String> entry: list.entrySet()){
-            System.out.println(entry.getKey()+" "+entry.getValue());
+        for (Map.Entry<String,String> entry: map.entrySet()){
+            System.out.println(entry.getKey()+":"+entry.getValue());
         }
 
 
     }
 
     private static void integer_integer_map(){
-        HashMap <Integer, Integer> s1 = new HashMap<>();
-        s1.put(1,3);
-        s1.put(4,5);
+        HashMap<Integer,Integer> map = new HashMap<>();
+        map.put(0,100);
+        map.put(1,101);
 
-        for (Map.Entry<Integer,Integer> entry: s1.entrySet()){
+        for (Map.Entry<Integer,Integer> entry: map.entrySet()){
             System.out.println(entry.getKey()+":"+entry.getValue());
         }
+
+
 
     }
 
     private static void string_integer_map(){
-        HashMap<String,Integer> s1 = new HashMap<>();
-        s1.put("Amit",1);
-        s1.put("Manoj",2);
+        HashMap<String,Integer> map = new HashMap<>();
+        map.put("0",100);
+        map.put("1",101);
 
-        System.out.println(s1);
-
-
-        for (Map.Entry<String,Integer> entry: s1.entrySet()){
-            System.out.println(entry.getKey()+" "+entry.getValue());
+        for (Map.Entry<String,Integer> entry: map.entrySet()){
+            System.out.println(entry.getKey()+":"+entry.getValue());
         }
-
 
 
     }
 
     private static void integer_string_map(){
-        HashMap<Integer,String> s1 = new HashMap<>();
-        s1.put(1,"Manoj");
-        s1.put(2,"Sunita");
+        HashMap<Integer,String> map = new HashMap<>();
+        map.put(100,"0");
+        map.put(101,"1");
 
-        System.out.println(s1);
-
-        for (Map.Entry<Integer,String> entry: s1.entrySet()){
-            System.out.println(entry.getKey()+" "+entry.getValue());
+        for (Map.Entry<Integer,String> entry: map.entrySet()){
+            System.out.println(entry.getKey()+":"+entry.getValue());
         }
+
+
 
 
     }

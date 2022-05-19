@@ -5,33 +5,41 @@ import java.util.*;
 public class HelloArrayList {
 
     private static void integer_list_initalize(){
-        List <Integer> list =new ArrayList<>();
-        list.add(1);
-        list.add(2);
+        List <Integer> list = new ArrayList<>();
+        list.add(100);
+        list.add(1000);
 
-        System.out.println(list);
+        for (int i=0; i<list.size();i++){
+            System.out.println(list.get(i));
+        }
+
     }
 
     private static void string_list_initalize(){
-        List <String> list= new ArrayList<>();
-        list.add(String.valueOf(1));
-        list.add(String.valueOf(2));
-        list.add(String.valueOf(3));
+        List <String> list = new ArrayList<>();
+        list.add("100");
+        list.add("1000");
 
-        System.out.println(list);
+        for (int i=0; i<list.size();i++){
+            System.out.println(list.get(i));
+        }
+
 
 
     }
 
     private static void nested_list_initalize(){
-        List<List <String>> l1 = new ArrayList<>();
+        List <List <String>> list = new ArrayList<>();
         for (int i=0; i<5;i++){
-            List <String> s1 = new ArrayList<>();
-            s1.add("A");
-            s1.add("B");
-            l1.add(s1);
+            List <String> temp_list = new ArrayList<>();
+            temp_list.add("Amit");
+            temp_list.add("Neha");
+            list.add(temp_list);
         }
-        System.out.println(l1);
+
+        for (int i=0; i<list.size();i++){
+            System.out.println(list.get(i));
+        }
     }
 
     public static void main (String [] args){

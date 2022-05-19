@@ -5,40 +5,50 @@ import java.util.Locale;
 public class IsPalindrome {
 
     private static boolean isPalindrome(String s) {
+        boolean flag=false;
         s=s.toLowerCase();
         int left=0;
         int right=s.length()-1;
-        boolean flag = false;
+
+
+        if (s.isEmpty())
+            return true;
+
 
         while (left<=right){
-            if (!((s.charAt(left)>='a' && s.charAt(left)<='z') || (s.charAt(left)>='0' && s.charAt(left)<='9'))){
-                left+=1;
-                flag=true;
+            if (!(Character.isAlphabetic(s.charAt(left)) || Character.isDigit(s.charAt(left)))) {
+                left += 1;
+                flag = true;
             }
-            else if (!((s.charAt(right)>='a' && s.charAt(right)<='z') || (s.charAt(right)>='0' && s.charAt(right)<='9'))){
-                right-=1;
-                flag=true;
+            else if (!(Character.isAlphabetic(s.charAt(right)) || Character.isDigit(s.charAt(right)))){
+                right -= 1;
+                flag = true;
             }
-            else if (s.charAt(right)!=s.charAt(left)){
+            else if (s.charAt(left)!=s.charAt(right)) {
                 return false;
             }
-            else {
+            else{
+                flag=true;
                 left+=1;
                 right-=1;
-                flag=true;
-            }
-        }
 
+            }
+
+        }
         return flag;
     }
 
 
 
     public static void main (String args[]){
-        System.out.println(isPalindrome("race a car"));
-        System.out.println(isPalindrome("rac a car"));
-        System.out.println(isPalindrome("A man, a plan, a canal: Panama"));
-        System.out.println(isPalindrome(" "));
+        System.out.println(isPalindrome("0P"));
+        System.out.println(isPalindrome("1b1"));
+
+//        System.out.println(isPalindrome("A man, a plan, a canal: Panama"));
+//          System.out.println(isPalindrome("race a car"));
+//          System.out.println(isPalindrome("rac a car"));
+//          System.out.println(isPalindrome("A man, a plan, a canal: Panama"));
+//          System.out.println(isPalindrome(" "));
 
 
     }
