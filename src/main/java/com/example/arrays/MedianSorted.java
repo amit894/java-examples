@@ -9,52 +9,44 @@ public class MedianSorted {
         int m=nums1.length;
         int n=nums2.length;
 
-        int [] merged = new int [m+n];
+        int [] merged= new int[m+n];
 
         int i=0;
         int j=0;
         int k=0;
-        double result=0.0;
 
-        while (i<m && j<n && k<m+n){
-            if (nums1[i]<=nums2[j]){
-                merged[k]=nums1[i];
+        while (i<nums1.length && j<nums2.length && k<merged.length){
+            if (nums1[i]<nums2[j]) {
+                merged[k] = nums1[i];
+                k+=1;
                 i+=1;
-                k+=1;
             }
-            else{
-                merged[k]=nums2[j];
+            else {
+                merged[k] = nums2[j];
+                k+=1;
                 j+=1;
-                k+=1;
+
             }
-
         }
 
-        while (i<m){
-            merged[k]=nums1[i];
+        while (i<nums1.length){
+            merged[k] = nums1[i];
+            k+=1;
             i+=1;
-            k+=1;
 
         }
 
-        while (j<n){
-            merged[k]=nums2[j];
+
+        while (j<nums2.length){
+            merged[k] = nums2[j];
+            k+=1;
             j+=1;
-            k+=1;
-
         }
 
-        System.out.println(Arrays.toString(merged));
-
-
-        if ((m+n)%2!=0){
-            result=Double.valueOf(merged[((m+n)/2)]);
-            return result;
-        }
-
-        result=(Double.valueOf(merged[((m+n)/2)])+Double.valueOf(merged[((m+n)/2)-1]))/2;
-        return result;
-
+        if ((m+n)%2==1)
+            return Double.valueOf(merged[(m+n)/2]);
+        else
+            return ((Double.valueOf(merged[(m+n)/2-1]) + Double.valueOf(merged[(m+n)/2]))/2);
 
 
     }

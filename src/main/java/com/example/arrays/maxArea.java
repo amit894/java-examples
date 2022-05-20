@@ -6,14 +6,15 @@ public class maxArea {
         int left=0;
         int right=height.length-1;
         int maxArea=0;
+
         while (left<=right){
-            int area=Math.min(height[left],height[right])*(right-left);
-            maxArea=Math.max(area,maxArea);
+            maxArea=Math.max(Math.min(height[left],height[right])*(right-left), maxArea);
 
             if (height[left]<height[right])
                 left+=1;
             else
                 right-=1;
+
         }
 
         return maxArea;

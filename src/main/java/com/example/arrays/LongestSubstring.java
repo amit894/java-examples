@@ -8,12 +8,13 @@ public class LongestSubstring {
       String subs="";
       int maxLength=0;
 
-      for ( int i=0; i<s.length();i++){
+      for (int i=0;i<s.length();i++){
           if (subs.contains(String.valueOf(s.charAt(i))))
-              subs=subs.substring(subs.indexOf(s.charAt(i))+1);
-          subs+=String.valueOf(s.charAt(i));
+                  subs=subs.substring(subs.indexOf(s.charAt(i))+1);
+          subs=subs+String.valueOf(s.charAt(i));
           maxLength=Math.max(maxLength,subs.length());
       }
+
       return maxLength;
     }
 

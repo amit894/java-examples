@@ -9,29 +9,30 @@ public class LeftRotateOptimizied {
           return b;
       if (b==0)
           return a;
+      else
+          return gcd(b, a%b);
 
-      return gcd(b,a%b);
     }
 
 
     private static void left_optimizied(int[] A, int d) {
-       d=d%A.length;
-       int g_c_d=gcd(d,A.length);
+     d=d%A.length;
+     int g_c_d=gcd(d,A.length);
 
-       for ( int i=0; i<g_c_d;i++){
-           int j=i;
-           int temp=A[i];
-           while(true){
-               int k=d+j;
-               if (k>=A.length)
-                   k=k-A.length;
-               if (k==i)
-                   break;
-               A[j]=A[k];
-               j=k;
-           }
-           A[j]=temp;
-       }
+     for (int i=0; i<g_c_d;i++){
+         int j=i;
+         int temp=A[i];
+         while (true){
+             int k=d+j;
+             if (k>=A.length)
+                 k=k-A.length;
+             if (k==i)
+                 break;
+             A[j]=A[k];
+             j=k;
+         }
+         A[j]=temp;
+     }
 
     }
 
