@@ -3,33 +3,38 @@ package com.example.linkedList;
 public class LinkedList {
 
     Node head;
+
     private class Node {
         int val;
         Node next;
-        Node (int x){val=x; }
+        Node (int x){val=x;}
     }
 
-    private void push(int new_data)
-    {
-
-        Node new_node = new Node(new_data);
-        new_node.next = head;
-        head = new_node;
-    }
-
-    private void print_list(Node head)
-    {
-        Node curr = head;
-        while (curr!=null){
-            System.out.println(curr.val);
-            curr=curr.next;
+    private void insert(int val){
+        Node node=new Node(val);
+        if (head==null)
+            head=node;
+        else {
+            node.next = head;
+            head=node;
         }
     }
 
+    private void print_list(Node head){
+       Node current_node=head;
+       while(current_node!=null){
+           System.out.println(current_node.val);
+           current_node=current_node.next;
+       }
+    }
+
+
     public static void main (String args[]){
-        LinkedList l1=new LinkedList();
-        l1.push(3);
-        l1.push(4);
+        LinkedList l1 = new LinkedList();
+        l1.insert(2);
+        l1.insert(22);
+        l1.insert(222);
+        l1.insert(2222);
         l1.print_list(l1.head);
 
     }
