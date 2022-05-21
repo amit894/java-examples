@@ -6,12 +6,15 @@ public class SelectionSort {
 
   private static void selection_sort(int [] A){
       for (int i=0;i<A.length;i++){
-          int min_idx=i;
-          for (int j=i;j<A.length;j++){
-              if (A[j]<A[min_idx]){
-                  min_idx=j;
-              }
-          }
+         int min_idx=i;
+         for (int j=i;j<A.length;j++){
+             if (A[j]<A[min_idx]){
+                 int temp=A[j];
+                 A[j]=A[min_idx];
+                 A[min_idx]=temp;
+             }
+         }
+
           int temp=A[i];
           A[i]=A[min_idx];
           A[min_idx]=temp;

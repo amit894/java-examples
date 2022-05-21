@@ -6,13 +6,13 @@ public class QuickSort {
 
     private static int pivot(int low, int high, int [] A){
         int i=low-1;
-        int pivot=A[high];
-        for (int j=low;j<high;j++){
-            if (A[j]<=pivot){
+        int key=A[high];
+        for (int j=low;j<=high;j++){
+            if (A[j]<key){
                 i+=1;
-                int temp=A[i];
-                A[i]=A[j];
-                A[j]=temp;
+                int temp=A[j];
+                A[j]=A[i];
+                A[i]=temp;
             }
         }
         int temp=A[high];
