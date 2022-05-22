@@ -3,17 +3,17 @@ package com.example.linkedList;
 
 public class HelloLinkedList {
     private static class SingleNode{
-        int val;
         SingleNode next;
+        int val;
         SingleNode(int x){val=x;}
+
     }
 
     public static void main (String [] args){
-        SingleNode N1 = new SingleNode(16);
-        SingleNode N2 = new SingleNode(160);
-        SingleNode N3 = new SingleNode(1600);
-        SingleNode N4 = new SingleNode(16000);
-
+        SingleNode N1 = new SingleNode(1);
+        SingleNode N2 = new SingleNode(2);
+        SingleNode N3 = new SingleNode(3);
+        SingleNode N4 = new SingleNode(4);
         N1.next=N2;
         N2.next=N3;
         N3.next=N4;
@@ -25,8 +25,10 @@ public class HelloLinkedList {
 
 
 
-
     }
+
+
+
 }
 
 

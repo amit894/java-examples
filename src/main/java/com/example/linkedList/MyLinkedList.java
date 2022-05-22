@@ -15,74 +15,64 @@ public class MyLinkedList {
     }
 
     public int get(int index) {
-        Node current_node=head;
-        int count=1;
-
-        while(count<index && current_node!=null ){
+        Node current_node= head;
+        for (int count=0; count<index && current_node!=null; count++){
             current_node=current_node.next;
         }
 
         if (current_node==null)
             return -1;
 
-        return (current_node.next.val);
+        return current_node.val;
+
 
 
     }
 
     public void addAtHead(int val) {
-        Node node = new Node(val);
-        if (head==null)
-            head=node;
-        else{
-            node.next=head;
-            head=node;
+        Node new_node = new Node(val);
+
+        if (head!=null){
+            new_node.next=head;
         }
+        head=new_node;
 
     }
 
     public void addAtTail(int val) {
-        Node current_node=head;
-        Node node = new Node(val);
-        while(current_node.next!=null){
+        Node new_node = new Node(val);
+        Node current_node= head;
+
+        while (current_node.next!=null){
             current_node=current_node.next;
+
         }
-        current_node.next=node;
+
+        current_node.next=new_node;
 
     }
 
     public void addAtIndex(int index, int val) {
-        Node current_node=head;
-        Node node = new Node(val);
-        int count=1;
-
-        while(count<index && current_node!=null ){
+        Node current_node= head;
+        Node new_node = new Node(val);
+        for (int count=0; count<index && current_node!=null; count++){
             current_node=current_node.next;
-            count+=1;
         }
-
 
         if (current_node==null)
             return;
 
-        node.next=current_node.next;
-        current_node.next=node;
+        new_node.next=current_node.next;
+        current_node.next=new_node;
+
 
     }
 
     public void deleteAtIndex(int index) {
-        Node current_node=head;
+        Node current_node= head;
         Node prev_node=null;
-        int count=1;
-
-        if (count==1){
-            head=head.next;
-            return;
-        }
-
-        while(count<index && current_node!=null ){
+        for (int count=0; count<index && current_node!=null; count++){
             prev_node=current_node;
-            count+=1;
             current_node=current_node.next;
         }
 
@@ -108,7 +98,7 @@ public class MyLinkedList {
         list.addAtHead(4);
         list.addAtHead(6);
         list.print_list(list.head);
-        list.addAtIndex(1,10);
+        list.addAtIndex(0,10);
         list.print_list(list.head);
 
     }
