@@ -28,6 +28,19 @@ public class HelloArrayList {
 
     }
 
+    private static void iterator_int_array_list(){
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(11);
+        list.add(12);
+
+        System.out.println(list);
+
+
+        for (int ele:list) {
+            System.out.println(ele);
+        }
+    }
+
     private static void nested_list_initalize(){
         List <List <String>> list = new ArrayList<>();
         for (int i=0; i<5;i++){
@@ -46,5 +59,6 @@ public class HelloArrayList {
         integer_list_initalize();
         string_list_initalize();
         nested_list_initalize();
+        iterator_int_array_list();
     }
 }
