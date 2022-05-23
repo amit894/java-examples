@@ -15,8 +15,8 @@ public class MyLinkedList {
     }
 
     public int get(int index) {
-        Node current_node= head;
-        for (int count=0; count<index && current_node!=null; count++){
+        Node current_node=head;
+        for (int i=0; i<index && current_node!=null;i++){
             current_node=current_node.next;
         }
 
@@ -24,7 +24,6 @@ public class MyLinkedList {
             return -1;
 
         return current_node.val;
-
 
 
     }

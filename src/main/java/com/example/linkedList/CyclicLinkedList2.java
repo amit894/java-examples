@@ -21,7 +21,7 @@ public class CyclicLinkedList2 {
     }
 
     private Node containsCycle(){
-        HashSet<Node> set = new HashSet<>();
+        HashSet <Node> set = new HashSet<>();
         Node current_node = head;
 
         while (current_node!=null){
@@ -30,8 +30,8 @@ public class CyclicLinkedList2 {
             set.add(current_node);
             current_node=current_node.next;
         }
-        return null;
 
+        return null;
     }
 
     private void print_list(){

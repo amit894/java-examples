@@ -2,18 +2,20 @@ package com.example.linkedList;
 
 
 public class HelloLinkedList {
-    private static class SingleNode{
-        SingleNode next;
-        int val;
-        SingleNode(int x){val=x;}
 
+    private static class Node {
+        Node next;
+        int val;
+        Node (int x){val=x;}
     }
 
+
     public static void main (String [] args){
-        SingleNode N1 = new SingleNode(1);
-        SingleNode N2 = new SingleNode(2);
-        SingleNode N3 = new SingleNode(3);
-        SingleNode N4 = new SingleNode(4);
+        Node N1 = new Node(4);
+        Node N2 = new Node(40);
+        Node N3 = new Node(400);
+        Node N4 = new Node(4000);
+
         N1.next=N2;
         N2.next=N3;
         N3.next=N4;

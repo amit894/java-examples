@@ -10,11 +10,8 @@ public class CyclicLinkedList {
     }
 
     private boolean containsCycle(){
-        Node slow_pointer=head;
-        Node fast_pointer=head;
-
-        if (head==null)
-            return true;
+        Node slow_pointer = head;
+        Node fast_pointer = head;
 
         while (slow_pointer!=null && fast_pointer!=null && fast_pointer.next!=null){
             slow_pointer=slow_pointer.next;
