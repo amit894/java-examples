@@ -5,15 +5,29 @@ import java.util.HashSet;
 
 public class HelloHashSet {
 
-    public static void main ( String [] args){
+    private static void integer_set (){
         HashSet<Integer> set = new HashSet<>();
         set.add(1);
         set.add(2);
 
-        System.out.println(set);
-        for (int ele:set) {
+        for ( Integer ele:set){
             System.out.println(ele);
         }
+    }
 
+    private static void string_set (){
+        HashSet<String> set = new HashSet<>();
+        set.add("Amit");
+        set.add("Neha");
+
+        for ( String ele:set){
+            System.out.println(ele);
+        }
+    }
+
+
+    public static void main ( String [] args){
+        string_set();
+        integer_set();
     }
 }
