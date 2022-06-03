@@ -3,15 +3,15 @@ package com.example.arrays;
 public class MaxSubArray {
 
     private static int maxSubArray(int [] A ){
-       int maxSum=A[0];
-       int windowSum=0;
+        int maxSum=A[0];
+        int windowSum=0;
+        for (int i=0; i<A.length;i++){
+            windowSum+=A[i];
+            maxSum=Math.max(windowSum,maxSum);
+            windowSum=Math.max(0, windowSum);
+        }
 
-       for (int i=0; i<A.length;i++){
-           windowSum+=A[i];
-           maxSum=Math.max(windowSum,maxSum);
-           windowSum=Math.max(windowSum,0);
-       }
-       return maxSum;
+        return maxSum;
     }
 
     public static void main (String args[]){
