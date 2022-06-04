@@ -6,20 +6,23 @@ public class QuickSort {
 
     private static int pivot(int low, int high, int [] A){
         int i=low-1;
-        int key=A[high];
-        for (int j=low;j<=high;j++){
-            if (A[j]<key){
+        int pivot = A[high];
+        for (int j=low; j<=high;j++){
+            if (A[j]<pivot){
                 i+=1;
-                int temp=A[j];
-                A[j]=A[i];
-                A[i]=temp;
+                int temp=A[i];
+                A[i]=A[j];
+                A[j]=temp;
             }
         }
-        int temp=A[high];
-        A[high]=A[i+1];
-        A[i+1]=temp;
+
+        int temp=A[i+1];
+        A[i+1]=A[high];
+        A[high]=temp;
 
         return (i+1);
+
+
     }
 
     private static int [] quick_sort(int low, int high, int [] A){
@@ -30,7 +33,7 @@ public class QuickSort {
             quick_sort(low,pi-1,A);
             quick_sort(pi+1,high,A);
         }
-        return A;
+       return A;
     }
 
     public static void main (String args[]){

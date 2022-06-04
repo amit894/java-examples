@@ -8,10 +8,10 @@ public class ReverseArray {
       int left=0;
       int right=A.length-1;
 
-      while (left<=right){
+      while ( left<=right){
           int temp=A[left];
-          A[left]=A[right];
-          A[right]=temp;
+          A [left]= A[right];
+          A[right]= temp;
           left+=1;
           right-=1;
       }

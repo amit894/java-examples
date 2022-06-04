@@ -13,7 +13,7 @@ public class MergedSorted {
         int j=0;
         int k=0;
 
-        while (i<nums1Copy.length && j <nums2.length && k<nums1.length){
+        while (i<m && j<n && k<m+n){
             if (nums1Copy[i]<nums2[j]){
                 nums1[k]=nums1Copy[i];
                 i+=1;
@@ -27,15 +27,18 @@ public class MergedSorted {
             }
         }
 
-        while (i<nums1Copy.length){
+        while (i<m){
             nums1[k]=nums1Copy[i];
             i+=1;
             k+=1;
+
         }
-        while (j<nums2.length){
+
+        while (j<n){
             nums1[k]=nums2[j];
             j+=1;
             k+=1;
+
         }
 
 

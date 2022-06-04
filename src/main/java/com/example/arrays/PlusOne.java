@@ -5,26 +5,20 @@ import java.util.Arrays;
 public class PlusOne {
 
     private static int [] plus_one(int [] digits){
-        int carry=1;
-        int right=digits.length-1;
-
-        while (carry!=0 && right>=0){
-            int digit_sum=digits[right]+carry;
-            digits[right]=digit_sum%10;
+        int carry =1;
+        for ( int i=digits.length-1; i>=0;i--){
+            int digit_sum=carry+digits[i];
+            digits[i]=digit_sum%10;
             carry=digit_sum/10;
-            System.out.println(carry);
-            right-=1;
-
+            if (carry==0)
+                break;
         }
-
-        if (carry==1) {
-            digits = new int[digits.length + 1];
+        System.out.println(carry);
+        if (carry==1){
+            digits= new int[digits.length+1];
             digits[0]=1;
         }
-
-
-        return digits;
-
+        return  digits;
 
     }
 
