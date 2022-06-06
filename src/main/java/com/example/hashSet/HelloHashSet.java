@@ -6,10 +6,9 @@ import java.util.HashSet;
 public class HelloHashSet {
 
     private static void integer_set (){
-        HashSet<Integer> set = new HashSet<>();
+        HashSet <Integer> set = new HashSet<>();
         set.add(1);
         set.add(2);
-
         for ( Integer ele:set){
             System.out.println(ele);
         }

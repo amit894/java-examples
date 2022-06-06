@@ -16,9 +16,11 @@ public class CyclicLinkedList {
         while (slow_pointer!=null && fast_pointer!=null && fast_pointer.next!=null){
             slow_pointer=slow_pointer.next;
             fast_pointer=fast_pointer.next.next;
+
             if (slow_pointer==fast_pointer)
                 return true;
         }
+
         return false;
 
     }

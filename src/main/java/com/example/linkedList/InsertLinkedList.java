@@ -5,25 +5,23 @@ public class InsertLinkedList {
 
     private class Node {
         Node next;
-        int val;
-        Node (int x){val=x;}
+        int value;
+        Node (int num){value=num;}
     }
 
     private void insertAtHead(int val){
         Node node = new Node(val);
-        if  (head!=null){
+        if (head!=null)
             node.next=head;
-        }
         head=node;
     }
 
     private void print_list(){
-        Node current_node=head;
+        Node current_node = head;
         while (current_node!=null){
-            System.out.println(current_node.val);
+            System.out.println(current_node.value);
             current_node=current_node.next;
         }
-
     }
 
 

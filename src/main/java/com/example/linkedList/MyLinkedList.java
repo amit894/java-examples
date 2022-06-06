@@ -6,16 +6,15 @@ public class MyLinkedList {
     private class Node{
         Node next;
         int val;
-        Node(int x){val=x;}
-
+        Node (int x){val=x;}
     }
 
-    public MyLinkedList() {
+    private MyLinkedList(){
 
     }
 
     public int get(int index) {
-        Node current_node=head;
+        Node current_node =head;
         for (int i=0; i<index && current_node!=null;i++){
             current_node=current_node.next;
         }
@@ -25,26 +24,22 @@ public class MyLinkedList {
 
         return current_node.val;
 
-
     }
 
     public void addAtHead(int val) {
         Node new_node = new Node(val);
-
         if (head!=null){
             new_node.next=head;
         }
         head=new_node;
-
     }
 
     public void addAtTail(int val) {
         Node new_node = new Node(val);
-        Node current_node= head;
+        Node current_node = head;
 
         while (current_node.next!=null){
             current_node=current_node.next;
-
         }
 
         current_node.next=new_node;
@@ -52,17 +47,21 @@ public class MyLinkedList {
     }
 
     public void addAtIndex(int index, int val) {
+        Node new_node= new Node(val);
         Node current_node= head;
-        Node new_node = new Node(val);
         for (int count=0; count<index && current_node!=null; count++){
             current_node=current_node.next;
         }
 
-        if (current_node==null)
+        if (current_node==null){
+            head=current_node;
             return;
+
+        }
 
         new_node.next=current_node.next;
         current_node.next=new_node;
+
 
 
     }

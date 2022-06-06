@@ -21,16 +21,14 @@ public class CyclicLinkedList2 {
     }
 
     private Node containsCycle(){
-        HashSet <Node> set = new HashSet<>();
-        Node current_node = head;
-
+        HashSet<Node> set = new HashSet<>();
+        Node current_node=head;
         while (current_node!=null){
             if (set.contains(current_node))
                 return current_node;
             set.add(current_node);
             current_node=current_node.next;
         }
-
         return null;
     }
 
