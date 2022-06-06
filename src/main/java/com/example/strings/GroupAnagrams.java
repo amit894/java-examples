@@ -5,30 +5,25 @@ import java.util.*;
 public class GroupAnagrams {
 
     private static List<List<String>> groupAnagrams (String [] strs){
-      if (strs.length==0){
+      if (strs.length==0)
           return null;
-      }
+      Map <String,List> map = new HashMap <>();
+      for ( int i=0; i< strs.length;i++){
+          char [] char_array = strs[i].toCharArray();
+          Arrays.sort(char_array);
+          String sorted_str= new String(char_array);
 
-      HashMap<String,List> map = new HashMap<>();
-
-      for (int i=0; i<strs.length;i++){
-          char [] temp_char_array=strs[i].toCharArray();
-          Arrays.sort(temp_char_array);
-          String sorted_string= new String(temp_char_array);
-
-          if (map.containsKey(sorted_string))
-              map.get(sorted_string).add(strs[i]);
+          if (map.containsKey(sorted_str))
+              map.get(sorted_str).add(strs[i]);
           else {
-              List<String> temp_list = new ArrayList<>();
+              List <String> temp_list = new ArrayList<>();
               temp_list.add(strs[i]);
-              map.put(sorted_string,temp_list);
+              map.put(sorted_str,temp_list);
           }
 
       }
-
-      List <List<String>>ans = new ArrayList(map.values());
-
-      return ans;
+        List <List<String>> result = new ArrayList(map.values());
+        return result;
 
 
     }

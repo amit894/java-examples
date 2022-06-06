@@ -5,10 +5,9 @@ import java.util.Arrays;
 public class anagram {
 
     private static String convert_sort(String s){
-        char [] char_array=new char[s.length()];
-        char_array=s.toCharArray();
+       char[] char_array=s.toCharArray();
         Arrays.sort(char_array);
-        String sorted_string=new String(char_array);
+        String sorted_string = new String(char_array);
         return sorted_string;
     }
 
@@ -23,9 +22,12 @@ public class anagram {
         String s1="bachelor";
         String s2="bacehlomr";
         String s3="backehlor";
+        String s4="bcahelor";
 
         System.out.println(compare(s1,s2));
         System.out.println(compare(s2,s3));
+        System.out.println(compare(s1,s4));
+
 
     }
 }

@@ -8,15 +8,15 @@ public class OneEditString {
           return oneEditCheck(t,s);
       if (t.length()-s.length()>1)
           return false;
-      for (int i=0;i<t.length();i++){
-          if (t.charAt(i)!=s.charAt(i)){
-              if (t.length()==s.length())
-                  return (t.substring(i+1).equals(s.substring(i+1)));
+      for ( int i=0; i<s.length();i++){
+          if (s.charAt(i)!=t.charAt(i)){
+              if (s.length()==t.length())
+                  return (s.substring(i+1).equals(t.substring(i+1)));
               else
-                  return (t.substring(i+1).equals(s.substring(i)));
+                  return (s.substring(i).equals(t.substring(i+1)));
           }
       }
-      return (t.length()==s.length()+1);
+      return (s.length()+1==t.length());
 
     }
 
