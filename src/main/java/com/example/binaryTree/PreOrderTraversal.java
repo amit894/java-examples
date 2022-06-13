@@ -15,14 +15,22 @@ public class PreOrderTraversal {
         }
     }
 
-    private List<Integer> preorderTraversalHelper ( TreeNode root, List result){
-        if (root==null){
-            return result;
-        }
+    private List<Integer> preorderTraversalHelper ( TreeNode root) {
+        List <Integer> result = new ArrayList<>();
+        result=preorderTraversalHelper(root,result);
+        return result;
 
+    }
+
+
+    private List<Integer> preorderTraversalHelper ( TreeNode root, List result){
+        if (root==null)
+            return result;
         result.add(root.val);
-        preorderTraversalHelper(root.left,result);
-        preorderTraversalHelper(root.right,result);
+        if (root.left!=null)
+            preorderTraversalHelper(root.left,result);
+        if (root.right!=null)
+            preorderTraversalHelper(root.right,result);
         return result;
 
     }

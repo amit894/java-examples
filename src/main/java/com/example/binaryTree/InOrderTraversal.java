@@ -15,15 +15,21 @@ public class InOrderTraversal {
         }
     }
 
-    public List<Integer> inorderTraversalHelper ( TreeNode root, List result){
-        if (root==null){
-            return result;
-        }
-
-        inorderTraversalHelper(root.left,result);
-        result.add(root.val);
-        inorderTraversalHelper(root.right,result);
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List <Integer> result = new ArrayList<>();
+        result=inorderTraversalHelper(root,result);
         return result;
 
+    }
+
+    public List<Integer> inorderTraversalHelper ( TreeNode root, List result){
+        if (root==null)
+            return result;
+        if (root.left!=null)
+            inorderTraversalHelper(root.left,result);
+        result.add(root.val);
+        if (root.right!=null)
+            inorderTraversalHelper(root.right,result);
+        return result;
     }
 }

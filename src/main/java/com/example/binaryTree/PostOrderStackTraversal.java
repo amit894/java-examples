@@ -27,7 +27,7 @@ public class PostOrderStackTraversal {
         Stack <TreeNode> s2 = new Stack<>();
         s1.push(root);
 
-        while(!s1.isEmpty()){
+        while (!s1.isEmpty()){
             TreeNode node = s1.pop();
             s2.push(node);
             if (node.left!=null)
@@ -37,10 +37,10 @@ public class PostOrderStackTraversal {
         }
 
         while (!s2.isEmpty()){
-            TreeNode node = s2.pop();
-            result.add(node.val);
+            result.add(s2.pop().val);
         }
-        return  result;
+
+        return result;
 
 
     }
